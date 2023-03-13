@@ -12,9 +12,8 @@ import android.widget.Toast;
 
 public class calulo_preciso extends AppCompatActivity {
 
-    EditText preco_gasolina,preco_alcool;
+    EditText preco_gasolina,preco_alcool,km_p_alcool,km_p_gasosa;
     TextView txt_resultado, titulo;
-    ImageView imagem;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -22,6 +21,8 @@ public class calulo_preciso extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calulo_preciso);
 
+        km_p_alcool = findViewById(R.id.edt_km_por_alcool);
+        km_p_gasosa = findViewById(R.id.edt_km_gasosa);
         preco_gasolina = findViewById(R.id.edt_preco_gasolina);
         preco_alcool = findViewById(R.id.edt_preco_alcool);
         txt_resultado = findViewById(R.id.txt_resultado);
@@ -43,13 +44,13 @@ public class calulo_preciso extends AppCompatActivity {
             double resulteido = valoralcool / valorgasolina;
 
             if(resulteido >= 0.7) {
-                txt_resultado.setText("usar gasolina");
+                Toast.makeText(getApplicationContext(),"usar gasolina",Toast.LENGTH_SHORT).show();
             } else {
-                txt_resultado.setText("usar alcool");
+                Toast.makeText(getApplicationContext(),"usar alcool",Toast.LENGTH_SHORT).show();
             }
 
         }else{
-            Toast.makeText(getApplicationContext(), "! PREENCHA OS CAMPOS PRIMEIRO!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "!PREENCHA OS CAMPOS PRIMEIRO!", Toast.LENGTH_SHORT).show();
         }
 
     }

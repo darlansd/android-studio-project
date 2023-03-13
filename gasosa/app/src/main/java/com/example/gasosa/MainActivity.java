@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
             double resulteido = valoralcool / valorgasolina;
 
             if(resulteido >= 0.7) {
-                txt_resultado.setText("usar gasolina");
+                Toast.makeText(getApplicationContext(),"usar gasolina",Toast.LENGTH_SHORT).show();
             } else {
-                txt_resultado.setText("usar alcool");
+                Toast.makeText(getApplicationContext(),"usar alcool",Toast.LENGTH_SHORT).show();
             }
 
         }else{
